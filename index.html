@@ -1,0 +1,1047 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TabrikYasovchi | Bayram tabriklari</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main: #6957ed;
+  --main-2: #8d5cf2;
+  --brand: #7a5af5;
+  --bg: #f4f6ff;
+  --bg-soft: #edf2ff;
+  --card: rgba(255,255,255,0.8);
+  --card-strong: #ffffff;
+  --text: #1d2440;
+  --muted: #5d6587;
+  --line: rgba(111,118,186,0.18);
+  --shadow: rgba(52, 49, 164, 0.14);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(119, 92, 246, 0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(74, 138, 255, 0.12), transparent 27%),
+    var(--bg);
+  color: var(--text);
+  transition: all 0.35s ease;
+}
+
+body.dark {
+  --bg: #0d1426;
+  --bg-soft: #111d35;
+  --card: rgba(18, 28, 46, 0.8);
+  --card-strong: #1a2945;
+  --text: #edf3ff;
+  --muted: #afbdd9;
+  --line: rgba(150, 165, 214, 0.18);
+  --shadow: rgba(7, 11, 23, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+body::before {
+  background: rgba(131, 97, 255, 0.16);
+  top: 40px;
+  left: -80px;
+}
+
+body::after {
+  background: rgba(102, 181, 255, 0.14);
+  right: -60px;
+  bottom: 70px;
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  background: rgba(12, 18, 36, 0.7);
+  backdrop-filter: blur(14px);
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span {
+  color: #fed785;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #d8cbff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 14px;
+  padding: 13px 18px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.07);
+}
+
+.theme-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.hero {
+  padding: 82px 7% 70px;
+  color: white;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 204, 120, 0.8), transparent 19%),
+    radial-gradient(circle at 20% 20%, rgba(208, 187, 255, 0.35), transparent 25%),
+    linear-gradient(125deg, #172554 0%, #2a2d65 26%, #5c4ad0 70%, #7d5ae0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1.2;
+  min-width: 280px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin: 20px 0 18px;
+  max-width: 620px;
+}
+
+.hero h1 span {
+  color: #ffd97e;
+  text-shadow: 0 0 18px rgba(255, 217, 126, 0.5);
+}
+
+.hero p {
+  line-height: 1.8;
+  max-width: 560px;
+  color: rgba(255,255,255,0.86);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #f7d27d 0%, #ffb0a1 26%, #d298ff 100%);
+  color: #1f183d;
+  box-shadow: 0 16px 30px rgba(150, 111, 255, 0.38);
+}
+
+.secondary-btn {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.hero-metrics {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.metric {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 14px 16px;
+  min-width: 120px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.metric span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.74);
+}
+
+.hero-visual {
+  flex: 0.9;
+  min-width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-stack {
+  position: relative;
+  width: min(100%, 420px);
+  height: 420px;
+}
+
+.float-card {
+  position: absolute;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 22px 40px rgba(21, 16, 48, 0.24);
+}
+
+.card-main {
+  inset: 26px 24px 44px 26px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(145deg, rgba(255,255,255,0.23), rgba(255,255,255,0.1));
+}
+
+.card-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  background: rgba(255,255,255,0.14);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.card-main h3 {
+  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  margin: 16px 0 10px;
+}
+
+.card-main p {
+  color: rgba(255,255,255,0.78);
+  line-height: 1.7;
+}
+
+.card-mini {
+  right: 0;
+  bottom: 0;
+  min-width: 180px;
+  padding: 14px 16px;
+  transform: rotate(8deg);
+}
+
+.card-mini strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.card-mini span {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.8rem;
+}
+
+main {
+  width: min(1180px, 92%);
+  margin: 52px auto 30px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-title h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 26px;
+  box-shadow: 0 20px 40px var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.panel h3 {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+}
+
+.description {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid rgba(132, 143, 193, 0.28);
+  border-radius: 14px;
+  font-size: 0.98rem;
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: rgba(255,255,255,0.02);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(118, 128, 164, 0.8);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--main);
+  box-shadow: 0 0 0 4px rgba(105, 87, 237, 0.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-actions,
+.preview-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.form-actions > button,
+.preview-actions > button {
+  flex: 1;
+  min-width: 145px;
+}
+
+.primary-btn-fill {
+  background: linear-gradient(135deg, #6957ed, #9d5cf0);
+  color: white;
+  box-shadow: 0 16px 30px rgba(105, 87, 237, 0.28);
+}
+
+.secondary-btn-fill {
+  background: linear-gradient(135deg, #eef0ff, #e9ebff);
+  color: #3d2fa1;
+}
+
+.preview-panel {
+  overflow: hidden;
+}
+
+.greeting {
+  position: relative;
+  background: linear-gradient(135deg, #fff1d2 0%, #f0e1ff 50%, #dfeeff 100%);
+  color: #2d224f;
+  border: 5px double rgba(161, 117, 255, 0.7);
+  border-radius: 24px;
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(118, 88, 220, 0.12);
+  transition: all 0.25s ease;
+}
+
+.greeting .emoji {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  margin-bottom: 12px;
+}
+
+.greeting .small {
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6853cb;
+  font-weight: 800;
+}
+
+.greeting h2 {
+  font-size: clamp(2rem, 2.5vw, 2.7rem);
+  margin: 16px 0 10px;
+  line-height: 1.2;
+}
+
+.greeting .to {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 16px 0 12px;
+}
+
+.greeting .message {
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #2d224f;
+}
+
+.greeting .from {
+  margin-top: 22px;
+  text-align: right;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+.holiday-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.holiday {
+  position: relative;
+  background: rgba(255,255,255,0.48);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px 16px;
+  box-shadow: 0 12px 28px rgba(39, 52, 99, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.holiday:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(39, 52, 99, 0.12);
+}
+
+.holiday .icon {
+  font-size: 2.1rem;
+}
+
+.holiday h3 {
+  margin: 14px 0 10px;
+  font-size: 1.08rem;
+}
+
+.holiday p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.holiday button {
+  width: 100%;
+  background: linear-gradient(135deg, #efeaff, #eaf0ff);
+  color: #4031a8;
+  border: 1px solid rgba(122, 112, 196, 0.15);
+}
+
+footer {
+  background: #101a2f;
+  color: white;
+  text-align: center;
+  padding: 30px 18px 36px;
+  margin-top: 54px;
+}
+
+footer h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+footer span {
+  color: #c9b9ff;
+}
+
+footer p {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.8;
+}
+
+#notice {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 27, 45, 0.92);
+  color: white;
+  padding: 13px 18px;
+  border-radius: 12px;
+  display: none;
+  z-index: 999;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 18px 38px rgba(22, 22, 26, 0.24);
+}
+
+@media (max-width: 880px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .holiday-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 540px) {
+  .holiday-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 18px 5%;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  #greeting, #greeting * { visibility: visible; }
+  #greeting {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 90vh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">💌 Tabrik<span>Yasovchi</span></div>
+
+  <nav>
+    <a href="#home">Bosh sahifa</a>
+    <a href="#holidays">Bayramlar</a>
+    <a href="#create">Tabrik yaratish</a>
+  </nav>
+
+  <button class="theme-btn" onclick="toggleTheme()">🌙 Rejim</button>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">✨ Bayramlar uchun shaffof tabrik</div>
+    <h1>Yaqinlaringizga <span>maxsus</span> tabriknoma yozing!</h1>
+    <p>
+      Ism, sinf, bayram va tilaklarni yozing — va bir necha soniyada zamonaviy, chiroyli,
+      quvnoq tabriknomani tayyorlang. Ustozlar, do'stlar, oila a'zolari va yaqinlaringiz uchun!
+    </p>
+
+    <div class="hero-actions">
+      <a href="#create"><button class="primary-btn">🎁 Tabrik yaratish</button></a>
+      <button class="secondary-btn" onclick="chooseHoliday('newyear')">🎉 Tez tanlash</button>
+    </div>
+
+    <div class="hero-metrics">
+      <div class="metric">
+        <strong>10+</strong>
+        <span>Bayram turkumi</span>
+      </div>
+      <div class="metric">
+        <strong>1 klik</strong>
+        <span>Yaratish</span>
+      </div>
+      <div class="metric">
+        <strong>100%</strong>
+        <span>Samimiylik</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="preview-stack">
+      <div class="float-card card-main">
+        <div class="card-badge">🎉 Bayram</div>
+        <div>
+          <h3>Tabriknoma</h3>
+          <p>Yorqin, samimiy va xotirjam uslubdagi tilaklar tayyor!</p>
+        </div>
+      </div>
+      <div class="float-card card-mini">
+        <strong>💌 2026</strong>
+        <span>Yangi quvonchli kun</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section id="create">
+    <div class="section-title">
+      <h2>💌 Tabriknoma yaratish</h2>
+      <p>Ma'lumotlarni to'ldiring — keyin tabriknoma avtomatik ravishda yangilanadi.</p>
+    </div>
+
+    <div class="layout">
+      <div class="panel">
+        <h3>📝 Ma'lumotlaringiz</h3>
+        <p class="description">Barcha maydonlarni o'zingizga moslab to'ldiring.</p>
+
+        <form id="greetingForm">
+          <label for="sender">Sizning ismingiz</label>
+          <input id="sender" placeholder="Masalan: Muhammadjon" required>
+
+          <label for="className">Sinfingiz (ixtiyoriy)</label>
+          <input id="className" placeholder="Masalan: 5-A sinf">
+
+          <label for="recipient">Kimni tabriklaysiz?</label>
+          <input id="recipient" placeholder="Masalan: Aziz ustozim" required>
+
+          <label for="holiday">Bayramni tanlang</label>
+          <select id="holiday">
+            <option value="teachers">📚 Ustozlar kuni</option>
+            <option value="ramadan">🌙 Ramazon hayiti</option>
+            <option value="qurban">🐑 Qurbon hayiti</option>
+            <option value="newyear">🎄 Yangi yil</option>
+            <option value="navruz">🌷 Navro'z</option>
+            <option value="women">💐 8-mart</option>
+            <option value="independence">🇺🇿 Mustaqillik kuni</option>
+            <option value="birthday">🎂 Tug'ilgan kun</option>
+            <option value="graduation">🎓 Bitiruv kuni</option>
+            <option value="custom">🎉 Boshqa bayram</option>
+          </select>
+
+          <label for="customHoliday">Bayram nomi (ixtiyoriy)</label>
+          <input id="customHoliday" placeholder="Masalan: Informatika kuni">
+
+          <label for="message">Qo'shimcha tilak (ixtiyoriy)</label>
+          <textarea id="message" placeholder="O'zingizning tilaklaringizni yozing..."></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn-fill">✨ Tabriknomani yaratish</button>
+            <button type="reset" class="secondary-btn-fill">↻ Tozalash</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel preview-panel">
+        <h3>🌟 Live preview</h3>
+        <p class="description">Yaratgan tabriknomangiz shu yerda real vaqtida ko'rinadi.</p>
+
+        <div class="greeting" id="greeting">
+          <div class="emoji" id="cardEmoji">💐</div>
+          <div class="small">Siz uchun samimiy tilaklar</div>
+          <h2 id="cardTitle">Bayramingiz muborak!</h2>
+          <p>Hurmatli</p>
+          <p class="to" id="cardRecipient">Aziz inson!</p>
+          <p class="message" id="cardMessage">
+            Sizni ushbu quvonchli kun bilan chin qalbimizdan tabriklaymiz!
+            Hayotingiz baxt, quvonch va omadga to'la bo'lsin.
+            Barcha ezgu niyatlaringiz amalga oshsin!
+          </p>
+          <div class="from">
+            Hurmat bilan,<br>
+            <span id="cardSender">Sizning do'stingiz</span><br>
+            <span id="cardClass"></span>
+          </div>
+        </div>
+
+        <div class="preview-actions">
+          <button class="primary-btn-fill" onclick="copyGreeting()">📋 Nusxalash</button>
+          <button class="secondary-btn-fill" onclick="window.print()">🖨️ Chop etish</button>
+          <button class="secondary-btn-fill" onclick="shareGreeting()">📤 Ulashish</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="holidays" style="margin-top:70px">
+    <div class="section-title">
+      <h2>🎊 Bayramlar ro'yxati</h2>
+      <p>Bayramni tanlang va tabriknoma yaratishni boshlang.</p>
+    </div>
+
+    <div class="holiday-grid">
+      <div class="holiday">
+        <div class="icon">📚</div>
+        <h3>Ustozlar kuni</h3>
+        <p>Ustozlarga hurmat va minnatdorchilik bildiring.</p>
+        <button onclick="chooseHoliday('teachers')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🌙</div>
+        <h3>Ramazon hayiti</h3>
+        <p>Mehr, tinchlik va ezgu tilaklarni ulashing.</p>
+        <button onclick="chooseHoliday('ramadan')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🐑</div>
+        <h3>Qurbon hayiti</h3>
+        <p>Oila va yaqinlarga samimiy tilaklar yo'llang.</p>
+        <button onclick="chooseHoliday('qurban')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🎄</div>
+        <h3>Yangi yil</h3>
+        <p>Yangi yil uchun quvonchli tilaklar tayyorlang.</p>
+        <button onclick="chooseHoliday('newyear')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🌷</div>
+        <h3>Navro'z</h3>
+        <p>Bahor, yangilanish va fayz tilang.</p>
+        <button onclick="chooseHoliday('navruz')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">💐</div>
+        <h3>8-mart</h3>
+        <p>Onalar, opa-singillar va ayollarni tabriklang.</p>
+        <button onclick="chooseHoliday('women')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🇺🇿</div>
+        <h3>Mustaqillik kuni</h3>
+        <p>Vatanimizga tinchlik va ravnaq tilang.</p>
+        <button onclick="chooseHoliday('independence')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🎂</div>
+        <h3>Tug'ilgan kun</h3>
+        <p>Yaqinlaringizning maxsus kunini nishonlang.</p>
+        <button onclick="chooseHoliday('birthday')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🎓</div>
+        <h3>Bitiruv kuni</h3>
+        <p>Yangi marralar va muvaffaqiyatlar tilang.</p>
+        <button onclick="chooseHoliday('graduation')">Tabriklash →</button>
+      </div>
+
+      <div class="holiday">
+        <div class="icon">🎉</div>
+        <h3>Boshqa bayramlar</h3>
+        <p>Istalgan bayram nomini o'zingiz kiriting.</p>
+        <button onclick="chooseHoliday('custom')">Tabriklash →</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <h3>💌 Tabrik<span>Yasovchi</span></h3>
+  <p>Yaxshi tilaklar — qalbdan qalbga! ❤️</p>
+  <p>© 2026 TabrikYasovchi | Barcha ezgu tilaklar siz uchun</p>
+</footer>
+
+<div id="notice"></div>
+
+<script>
+const holidayData = {
+  teachers: {
+    title: "Ustozlar kuni muborak!",
+    emoji: "📚💐",
+    message: "Sizni Ustoz va murabbiylar kuni bilan chin qalbimdan tabriklayman! Mehnatingiz, sabringiz va bergan bilimlaringiz uchun katta rahmat. Doimo sog'-salomat bo'ling, shogirdlaringiz kamolini ko'ring va hayotingiz quvonchlarga to'lsin!",
+    gradient: "linear-gradient(135deg, #f7d88a 0%, #d9d0ff 45%, #cfe9ff 100%)",
+    accent: "#7355df"
+  },
+  ramadan: {
+    title: "Ramazon hayiti muborak!",
+    emoji: "🌙✨",
+    message: "Sizni muborak Ramazon hayiti bilan samimiy tabriklayman! Xonadoningizdan tinchlik, mehr-oqibat va baraka arimasin. Barcha ezgu niyatlaringiz amalga oshsin!",
+    gradient: "linear-gradient(135deg, #d7d2ff 0%, #d7f0ff 30%, #f6d0ff 100%)",
+    accent: "#6a5ef6"
+  },
+  qurban: {
+    title: "Qurbon hayiti muborak!",
+    emoji: "🕌🌙",
+    message: "Sizni Qurbon hayiti bilan chin dildan tabriklayman! Oilangizga tinchlik, dasturxoningizga baraka, qalbingizga quvonch tilayman. Yaqinlaringiz doimo sog'-omon bo'lsin!",
+    gradient: "linear-gradient(135deg, #ffe5b5 0%, #f8d4c4 42%, #d9e8ff 100%)",
+    accent: "#f39d52"
+  },
+  newyear: {
+    title: "Yangi yil muborak!",
+    emoji: "🎄🎁",
+    message: "Yangi yil sizga yangi imkoniyatlar, katta muvaffaqiyatlar va unutilmas quvonchlar olib kelsin! Har bir kuningiz baxtli, orzularingiz esa ro'yobga chiqsin. Yangi yilingiz muborak!",
+    gradient: "linear-gradient(135deg, #ffd7d7 0%, #d5e5ff 45%, #d7ffe1 100%)",
+    accent: "#d94f62"
+  },
+  navruz: {
+    title: "Navro'zi olam muborak!",
+    emoji: "🌷🌿",
+    message: "Sizni go'zal Navro'z bayrami bilan tabriklayman! Bahoriy kayfiyat, mustahkam sog'liq, xonadoningizga fayz-u baraka tilayman. Yangi kun sizga ko'p quvonchlar olib kelsin!",
+    gradient: "linear-gradient(135deg, #ffe6b0 0%, #d5ffd6 40%, #dfeaff 100%)",
+    accent: "#2aa77a"
+  },
+  women: {
+    title: "8-mart muborak!",
+    emoji: "💐🌸",
+    message: "Sizga cheksiz quvonch, baxt, sog'liq va omad tilayman! Yuzingizdan tabassum, qalbingizdan mehr hech qachon arimasin. Har doim yaqinlaringiz ardog'ida bo'ling!",
+    gradient: "linear-gradient(135deg, #ffd7ef 0%, #ffd9c9 38%, #fff3b5 100%)",
+    accent: "#f067a3"
+  },
+  independence: {
+    title: "Mustaqillik kuni muborak!",
+    emoji: "🇺🇿💙",
+    message: "Sizni Vatanimiz mustaqilligi bayrami bilan tabriklayman! Yurtimiz tinch, osmonimiz musaffo, xalqimiz hamisha farovon bo'lsin. Vatanimiz ravnaqi uchun ezgu ishlar ko'paysin!",
+    gradient: "linear-gradient(135deg, #d8ebff 0%, #99d0ff 38%, #d9fff8 100%)",
+    accent: "#0b6dc1"
+  },
+  birthday: {
+    title: "Tug'ilgan kun muborak!",
+    emoji: "🎂🎈",
+    message: "Tug'ilgan kuningiz muborak bo'lsin! Sizga mustahkam sog'liq, cheksiz baxt, omad va ulkan muvaffaqiyatlar tilayman. Barcha orzularingiz ushalib, har kuningiz quvonchga to'lsin!",
+    gradient: "linear-gradient(135deg, #ffe4df 0%, #ffe8b0 35%, #dfe7ff 100%)",
+    accent: "#ff8b4a"
+  },
+  graduation: {
+    title: "Bitiruv kuningiz muborak!",
+    emoji: "🎓🌟",
+    message: "Ushbu unutilmas kun bilan tabriklayman! Oldingizda yangi imkoniyatlar va yorqin marralar ochilsin. Bilimingiz va mehnatingiz sizni katta muvaffaqiyatlarga yetaklasin!",
+    gradient: "linear-gradient(135deg, #d8f1ff 0%, #e8ddff 42%, #ffe6d8 100%)",
+    accent: "#5a67d8"
+  },
+  custom: {
+    title: "Bayramingiz muborak!",
+    emoji: "🎉🎁",
+    message: "Sizni ushbu ajoyib kun bilan chin qalbimdan tabriklayman! Sizga baxt, sog'liq, omad va barcha ishlaringizda muvaffaqiyat tilayman!",
+    gradient: "linear-gradient(135deg, #f7d0ff 0%, #d8d0ff 38%, #c8f5ff 100%)",
+    accent: "#8d5cf2"
+  }
+};
+
+let noticeTimer;
+
+function showNotice(text) {
+  const notice = document.getElementById("notice");
+  notice.textContent = text;
+  notice.style.display = "block";
+  clearTimeout(noticeTimer);
+  noticeTimer = setTimeout(() => {
+    notice.style.display = "none";
+  }, 2600);
+}
+
+function chooseHoliday(key) {
+  const select = document.getElementById("holiday");
+  select.value = key;
+  document.getElementById("create").scrollIntoView({ behavior: "smooth" });
+  updatePreview();
+}
+
+function updatePreview() {
+  const sender = document.getElementById("sender").value.trim();
+  const className = document.getElementById("className").value.trim();
+  const recipient = document.getElementById("recipient").value.trim();
+  const key = document.getElementById("holiday").value;
+  const customHoliday = document.getElementById("customHoliday").value.trim();
+  const extra = document.getElementById("message").value.trim();
+  const data = holidayData[key];
+  const greeting = document.getElementById("greeting");
+
+  greeting.style.background = data.gradient;
+  greeting.style.borderColor = data.accent;
+  greeting.style.boxShadow = `0 25px 60px ${data.accent}33`;
+
+  document.getElementById("cardEmoji").textContent = data.emoji;
+  document.getElementById("cardTitle").textContent =
+    key === "custom" && customHoliday
+      ? customHoliday + " muborak!"
+      : data.title;
+
+  document.getElementById("cardRecipient").textContent = recipient || "Aziz inson!";
+  document.getElementById("cardMessage").textContent = data.message + (extra ? "\n\n" + extra : "");
+  document.getElementById("cardSender").textContent = sender || "Sizning do'stingiz";
+  document.getElementById("cardClass").textContent = className;
+}
+
+document.getElementById("greetingForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  updatePreview();
+  showNotice("🎉 Tabriknomangiz tayyor!");
+});
+
+document.getElementById("greetingForm").addEventListener("reset", function() {
+  setTimeout(() => {
+    document.getElementById("holiday").value = "teachers";
+    document.getElementById("customHoliday").value = "";
+    document.getElementById("message").value = "";
+    updatePreview();
+    showNotice("Maydonlar tozalandi.");
+  }, 0);
+});
+
+function copyGreeting() {
+  const text = document.getElementById("greeting").innerText;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => showNotice("📋 Tabriknoma nusxalandi!"))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.select();
+
+  try {
+    document.execCommand("copy");
+    showNotice("📋 Tabriknoma nusxalandi!");
+  } catch {
+    showNotice("Matnni belgilang va nusxa oling.");
+  }
+
+  area.remove();
+}
+
+async function shareGreeting() {
+  const text = document.getElementById("greeting").innerText;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "Bayram tabriknomasi",
+        text: text
+      });
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        showNotice("Ulashish amalga oshmadi.");
+      }
+    }
+  } else {
+    copyGreeting();
+    showNotice("Ulashish mavjud emas. Tabriknoma nusxalandi!");
+  }
+}
+
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+  const dark = document.body.classList.contains("dark");
+  document.querySelector(".theme-btn").textContent = dark ? "☀️ Rejim" : "🌙 Rejim";
+}
+
+updatePreview();
+</script>
+
+</body>
+</html>
